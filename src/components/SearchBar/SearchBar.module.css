@@ -1,0 +1,64 @@
+.divBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    /* background-color: #2d2d2d; */
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .inputBar {
+    font-size: larger;
+    padding: 0.5rem 1rem;
+    /* border: solid; */
+    border-color: solid;
+    background-color: lightgreen;
+    
+    /* color: white; */
+    border: 1px solid;
+    border-bottom: #185e0eab solid 1px; 
+    outline: none;
+    transition: border-color 0.6s;
+    width: 200px;
+  }
+  .inputBar:hover {
+    /* background-color: lightgreen ; */
+    border-color: #185e0eab;
+  }
+  .inputBar:focus {
+    /* background-color: lightgreen; */
+    border-color: #185e0eab;
+  }
+  
+  .random:focus {
+    background-color: lightgreen;
+    border-color: #185e0eab;
+  }
+  .random {
+    border: 2px solid;
+    border-color: #ffd700;
+    background-color: gold;
+  }
+
+
+  .botonBar {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #88ff00ce;
+    color: #2d2d2d;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .botonBar:hover {
+    background-color: #ffd700;
+  }
+  
+  .botonBar:active {
+    background-color: #ff9100;
+  }
+  

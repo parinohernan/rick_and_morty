@@ -1,0 +1,13 @@
+.divCards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    /* background-color: rgba(136, 177, 163, 0.123); */
+    /* border-style: solid; */
+    /* border-color: rgb(14, 107, 45); */
+    justify-content: space-around;
+    height: auto;
+    width: 100%;
+    padding-top: 2em;
+}

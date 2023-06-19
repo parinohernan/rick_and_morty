@@ -2,10 +2,11 @@ import './App.css';
 // import Card from './components/Card/Card.jsx';
 import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav.jsx';
-//import characters, { Rick } from './data.js';
+import Details from './components/Details/Details.jsx';
+import About from './Views/About/About.jsx';
 import { useState } from 'react';
 import axios from 'axios';
-
+import {Routes, Route} from 'react-router-dom'
 
 function App() {
    //defini el estilo inline para practicar ya que no necesitaba darle muchas reglas
@@ -30,13 +31,19 @@ function App() {
       setCharacters(filteredCharacters);
    }
    
-   function onSearch(id) {
-      characters.forEach(element => {
+   async function onSearch(id) {
+      let repetido = false;
+
+      await characters.forEach(element => {
          if (element.id == id) {
-            window.alert('¡personaje repetido!');
-            return;
+            repetido = true;
          }
       });
+      if (repetido) {
+         window.alert('¡personaje repetido!');
+         return;
+      }
+      
       try {
          axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
             if (data.name) {
@@ -49,12 +56,19 @@ function App() {
          console.log("Error intentando obtener datos");
       }
    }
-   
+
    return (
-      <div className='App' style={AppStyle}>
-         <Nav classNme="NAV" onSearch={onSearch} length={826}></Nav>
-         <Cards characters={characters} onClose={onClose} />
-      </div>
+    <div className='App' style={AppStyle}>
+  
+      <Nav classNme="NAV" onSearch={onSearch} length={826}></Nav>
+      <Routes>
+         <Route path="/" element= <Cards characters={characters} onClose={onClose}/> />
+         <Route path="/about" element= <About/> />
+         <Route path="/home" element= <Cards characters={characters} onClose={onClose}/> />
+         <Route path="/details/:id" element=<Details/> />
+      </Routes>
+
+  </div>
    );
 }
 

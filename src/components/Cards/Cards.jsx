@@ -1,5 +1,5 @@
 import Card from '../Card/Card.jsx';
-import styles from './Cards.module.css'
+import styles from './Cards.module.css';
 // Opcion 1 directamente props
 export default function Cards(props) {
 
@@ -12,19 +12,20 @@ const { onClose} = props;
 //console.log('close',  onClose );
 return (
    <div className={styles.divCards}>
-      {characters.map((personaje) => {
-         const {
-            id,
-            name,
-            status,
-            species,
-            gender,
-            origin,
-            image
-         } = personaje;
-         
+   {characters.map((personaje) => {
+      const {
+         key,
+         id,
+         name,
+         status,
+         species,
+         gender,
+         origin,
+         image
+      } = personaje;
          return (
             <Card
+            key={id}
                id={id}
                name={name}
                status={status}
@@ -36,6 +37,7 @@ return (
             />
          )
       })}
+
    </div>
    );
 }

@@ -25,7 +25,7 @@ export default function SearchBar({onSearch, length}) {
          <h2 className={styles.random} onClick={handleRandom}>!?</h2>
          <input className={styles.inputBar} type='search' value={id} onChange={handleChange} />
          
-         <button className={styles.botonBar} onClick={handleAdd}>Agregar</button>
+         <button className={styles.botonBar} onClick={handleAdd}> Agregar </button>
    
    </div>
    );

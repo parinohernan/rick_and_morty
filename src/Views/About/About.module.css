@@ -1,0 +1,48 @@
+
+  .img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    margin-left: 20px;
+  } 
+  
+  /* aca copio los estilos del detail */
+
+  .divDetails {
+    /* Estilos para el contenedor details */
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 60%; /* Define el ancho total del contenedor */
+    margin-left: 20%; /* Define el margen izquierdo del 20% */
+    margin-right: 20%; /* Define el margen derecho del 20% */
+    margin-bottom: 20px; /* Define el margen inferior de 20px */
+  }
+  
+  
+  .fichaContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    
+  }
+  
+  .imageContainer {
+    flex: 0 0 35%; /* Ocupa el 50% del ancho */
+  }
+  
+  .textContainer {
+    flex: 0 0 50%; /* Ocupa el 50% del ancho */
+  }
+  
+  @media (max-width: 768px) {
+    .fichaContainer {
+      flex-direction: column; /* Acomoda los elementos en una columna */
+    }
+  
+    .imageContainer,
+    .textContainer {
+      flex: 1 1 100%; /* Ocupa todo el ancho */
+    }
+  } 

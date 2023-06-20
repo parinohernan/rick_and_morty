@@ -1,0 +1,14 @@
+.divContainer {
+    font-size: x-large;
+    background-color: black;
+    color:whitesmoke;
+}
+.warning {
+    border: solid red 1px;
+    border-radius: 0.2em;
+  }
+  
+.danger {
+    font-size: medium;
+    color: red;
+}

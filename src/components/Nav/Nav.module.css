@@ -1,0 +1,9 @@
+.noVisible {
+    visibility: collapse;
+    background-color:brown;
+
+}
+.visible {
+    visibility: visible;
+    background-color:azure
+}

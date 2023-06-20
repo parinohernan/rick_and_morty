@@ -22,27 +22,7 @@ export default function Details () {
        return setCharacter({});
     }, [id]);
 
-   //console.log(character.image); 
 
-   //  return (
-   //       <div className={Styles.div}>
-   //          <div className="info">
-   //          <h3>status: {character.status}</h3>
-   //          <h3>name: {character.name}</h3>
-            
-   //          <h3>species: {character.species}</h3>
-   //          <h3>gender: {character.gender}</h3>
-          
-   //          <h3>origin {character.origin?.name}</h3> 
-   //          {/*  ? Primero, se verifica si character.origin es null o undefined. Si es así, la expresión se evalúa como undefined y no se produce ningún error. */}
-   //          </div>
-   //          <div className="imagen">
-   //          <img className={Styles.img} src={character.image} alt='Perfil' />
-   //          </div>
-            
-             
-   //       </div> 
-   //  );
    return (
       <div className={Styles.div}>
         <div className={Styles.fichaContainer}>

@@ -21,8 +21,8 @@ function App() {
       left: `0`,
       right: `0`,
       bottom: `0`,
-      background: `linear-gradient(to bottom right, #000000, #000040, #000020)`,
-      //backgroundImage: 'url("https://wallpapercave.com/wp/wp7227842.jpg")',
+      //background: `linear-gradient(to bottom right, #000000, #000040, #000020)`,
+      backgroundImage: 'url("https://wallpapercave.com/wp/wp7227842.jpg")',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
@@ -63,6 +63,11 @@ function App() {
          window.alert('¡personaje repetido!');
          return;
       }
+      if (!/^(?:[1-9]\d{0,2}|826)$/.test(id)) {
+         window.alert('¡no hay personajes con ese ID!');
+         return;
+      }
+
       try {
          axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
             if (data.name) {

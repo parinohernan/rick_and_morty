@@ -11,9 +11,9 @@ export default function Form({login}) {
 });
 
 const [errors,setErrors] = React.useState ({
-    email: "",
-    password: "",
-    inicio:"x"
+    // email: "",
+    // password: "",
+    // inicio:"x"
 });
 
 
@@ -39,7 +39,7 @@ const handleSubmit = (e) => {
 }
 
 return <div className= {Styles.divContainer}><h2 >Login</h2>
-<form  >
+<form  onSubmit={handleSubmit}>
     <label >Email:</label> <br></br>
     <input
     type="text"
@@ -47,6 +47,7 @@ return <div className= {Styles.divContainer}><h2 >Login</h2>
     placeholder="Escribe tu email..."
     onChange={handleChange}
     className={ errors.email && Styles.warning}
+    value={userData.email}
     /><br></br>
     <p className={Styles.danger}>{errors.email}</p>
   <label>Password:</label><br></br>
@@ -56,9 +57,10 @@ return <div className= {Styles.divContainer}><h2 >Login</h2>
     placeholder="contraseña"
     onChange={handleChange}
     className={Styles.warning}
+    value={userData.password}
     /><br></br>
   <p className={Styles.danger}>{errors.password}</p>
-  <button type='submit' onClick={handleSubmit} >Enviar</button>
+  <button type='submit'  >Enviar</button>
 </form>
 </div>
 }

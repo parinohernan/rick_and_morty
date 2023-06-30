@@ -23,7 +23,12 @@ export default function SearchBar({onSearch, length}) {
    return (
    <div className={styles.divBar}>
          <h2 className={styles.random} onClick={handleRandom}>!?</h2>
-         <input className={styles.inputBar} type='search' value={id} onChange={handleChange} />
+         <input 
+         placeholder="..."
+         className={styles.inputBar} 
+         type='search' 
+         value={id} 
+         onChange={handleChange} />
          
          <button className={styles.botonBar} onClick={handleAdd}> Agregar </button>
    

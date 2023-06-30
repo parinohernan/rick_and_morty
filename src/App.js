@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import {Routes, Route, useNavigate, useLocation} from 'react-router-dom'
 import Form from './components/Form/Form';
-
+import Favorites from './components/Favorites/'
 function App() {
 
    const location = useLocation();
@@ -38,13 +38,17 @@ function App() {
    }, [access]);
 
    function login(userData) {   
-      console.log("login",userData.email, userData.password);
+      //console.log("login",userData.email, userData.password);
       if (userData.password === PASSWORD && userData.email === EMAIL) {
          setAccess(true);
          navigate('/home');
       }
    }
-
+   
+   function logout() {
+      setAccess(false);
+      navigate('/');
+   }
    const [characters, setCharacters] = useState([]); //defino el hook characters
    
    function onClose(id) {
@@ -52,6 +56,7 @@ function App() {
       setCharacters(filteredCharacters);
    }
    
+
    async function onSearch(id) {
       let repetido = false;
       await characters.forEach(element => {
@@ -84,10 +89,11 @@ function App() {
    
    return (
     <div className='App' style={AppStyle}>
-      <Nav className="NAV" onSearch={onSearch} length={826} visible={visible}></Nav>
+      <Nav className="NAV" logout={logout} onSearch={onSearch} length={826} visible={visible}></Nav>
       <Routes>
          {/* <Route path="/" element= <Cards characters={characters} onClose={onClose}/> /> */}
          <Route path="/" element= <Form login= {login}/> />
+         <Route path="/favorites" element= <Favorites/> />
          <Route path="/about" element= <About/> />
          <Route path="/home" element= <Cards characters={characters} onClose={onClose}/> />
          <Route path="/details/:id" element=<Details/> />
